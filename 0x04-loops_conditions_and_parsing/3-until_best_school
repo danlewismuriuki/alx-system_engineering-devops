@@ -5,7 +5,7 @@
 #Initialize the counter
 n=0
 #start the untill loop
-until [ "$n" -ge 10 ];
+until [ "$n" -eq 10 ];
 do
 	echo "Best School"
 	#Increment the counter 
