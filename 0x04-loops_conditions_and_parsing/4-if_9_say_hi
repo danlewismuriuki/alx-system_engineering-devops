@@ -3,13 +3,13 @@
 
 counter=0
 
-while [ "$counter" -lt 10 ] 
+while [ $counter -lt 10 ] 
 do
-	if [ "$counter" -eq 9 ]
+	if [ $counter -eq 9 ]
 	then
 		echo "Hi"
 	fi
-
 	echo "Best school"
+	
 	(( counter++ ))
 done
