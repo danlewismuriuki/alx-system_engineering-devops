@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# -a: Shows processes from all users
+# -u: Displays additional information about each process
+# including the username of the processes
+# -x: Includes processes that do not have a controllingg terminal (TTY)
+# -f: Provides a full-format listing displaying additional information
+# such as the user asociated with each process
+#and the command used to start the process
+
+ps -auxf
