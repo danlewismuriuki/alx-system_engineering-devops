@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This cript extracts only the IP Address
+#ping -c 1 192.168.159.1 | grep "64 bytes" | cut -d " " -f 4 | tr -d ":"
+#ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 11-
+ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 11-
