@@ -1,0 +1,10 @@
+# configuration that you can connect to a server without typing a password
+# SSH client configuration must be configured to use the private key ~/.ssh/school
+
+Host *
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
