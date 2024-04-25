@@ -2,8 +2,8 @@
 # install nginx
 # Append Hello world
 
-sudo apt update
-sudo apt install nginx
+sudo apt-get update
+sudo apt-get install nginx
 sudo ufw allow 'Nginx HTTP'
 sudo echo "Hello, world!" | sudo tee /var/www/html/index.html
 sudo service nginx restart
