@@ -1,4 +1,4 @@
-#!/usr/bin/env/ bash
+#!/usr/bin/env bash
 # change user from root to nginx
 pkill -f apache2
 chmod 644 /etc/nginx/nginx.conf
