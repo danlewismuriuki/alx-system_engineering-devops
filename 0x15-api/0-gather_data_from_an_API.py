@@ -1,26 +1,40 @@
 #!/usr/bin/python3
-"""Gather data from an API"""
-
-import requests
-import sys
+''' task 0 module'''
 
 
-if __name__ == "__main__":
-    # Define the URL for the REST API
-    url = "https://jsonplaceholder.typicode.com/"
+if __name__ == '__main__':
+    import requests
+    from sys import argv
 
-    # send a GET request to retrieve user info
-    user = requests.get(url + "users/{}".format(sys.argv[1])).json()
+    emp_id = argv[1]
+    total_todos = 0
+    done_todos = 0
+    done_todos_titles = []
 
-    # send a GET request to retrive the TODO
-    todos = requests.get(url + "todos", params={"userId": sys.argv[1]}).json()
+    res = requests.get(
+                   'https://jsonplaceholder.typicode.com/users/' +
+                   emp_id)
+    emp_name = res.json().get('name', 'user name not found')
 
-    # filter completed TODO list and store titles in a list
-    completed = [t.get("title") for t in todos if t.get("completed") is True]
+    res = requests.get(
+                   'https://jsonplaceholder.typicode.com/users/' +
+                   emp_id + '/todos')
+    emp_todos = res.json()
 
-    # print employee's name, completed tasks & total no of tasks
-    print("Employee {} is done with tasks({}/{}):".format(
-        user.get("name"), len(completed), len(todos)))
+    for todo in emp_todos:
+        total_todos += 1
+        if todo.get('completed') is True:
+            done_todos += 1
+            done_todos_titles.append(todo.get(
+                                          'title',
+                                          'no title found'
+                                          ))
 
-    # print the titles of completed tasks with indentation
-    [print("\t {}".format(c)) for c in completed]
+    print('Employee {} is done with tasks({}/{}):'.format(
+                                                   emp_name,
+                                                   done_todos,
+                                                   total_todos
+                                                   ))
+
+    for title in done_todos_titles:
+        print('\t ' + title)
