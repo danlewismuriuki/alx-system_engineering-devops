@@ -16,7 +16,7 @@ def fetch_employee_data(employee_id):
 
     # Fetch todos data
     employee_data = employee_response.json()
-    employee_name = employee_data.get('name')
+    EMPLOYEE_NAME = employee_data.get('name')
 
     # Fetch employees TODO list
     todos_url = f"{base_url}/todos?userId={employee_id}"
@@ -29,12 +29,12 @@ def fetch_employee_data(employee_id):
 
     # Flter completed tasks
     completed_tasks = [task for task in todos_data if task.get('completed')]
-    total_tasks = len(todos_data)
-    number_of_done_tasks = len(completed_tasks)
+    TOTAL_NUMBER_OF_TASKS = len(todos_data)
+    NUMBER_OF_DONE_TASKS = len(completed_tasks)
 
     # print the required information
-    print(f"Employee {employee_name} is done with tasks "
-          f"({number_of_done_tasks}/{total_tasks}):")
+    print(f"Employee {EMPLOYEE_NAME} is done with tasks "
+          f"({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):")
     for task in completed_tasks:
         print(f"\t {task.get('title')}")
 
