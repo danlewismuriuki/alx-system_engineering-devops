@@ -32,7 +32,7 @@ def fetch_employee_data(employee_id):
     TOTAL_NUMBER_OF_TASKS = len(todos_data)
     NUMBER_OF_DONE_TASKS = len(completed_tasks)
 
-    # print the required information
+    # print the required tasks
     print(f"Employee {EMPLOYEE_NAME} is done with tasks "
           f"({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):")
     for task in completed_tasks:
