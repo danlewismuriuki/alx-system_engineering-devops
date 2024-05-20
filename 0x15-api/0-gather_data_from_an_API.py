@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
     try:
         employee_id = int(sys.argv[1])
-    except ValueErrorr:
+    except ValueError:
         print("Employee ID must be an Integer")
         sys.exit(1)
 
