@@ -12,7 +12,7 @@ if __name__ == "__main__":
     # send a GET request to retrieve user info
     user = requests.get(url + "users/{}".format(sys.argv[1])).json()
 
-    # send a GET request to retrive the TODO list
+    # send a GET request to retrive the TODO
     todos = requests.get(url + "todos", params={"userId": sys.argv[1]}).json()
 
     # filter completed TODO list and store titles in a list
