@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ task 0 module """
+
 import requests
 import sys
 
